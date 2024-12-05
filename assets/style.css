@@ -14,9 +14,17 @@ header{
   background-image: url("./img/wall.png");
 }
 
+h1{
+  font-size: 120% !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
+}
+
 main{
   min-height: calc(100vh - 150px);
   background-image: url("./img/cork.png");
+}
+
+.container{
+  max-width: 940px;
 }
 
 .photo-card{
@@ -50,7 +58,6 @@ main{
 }
 
 .caption{
-  font-family:'Courier New', Courier, monospace;
   font-style: italic;
   position: absolute;
   top: 280px; /* Somma tra altezza foto e top di margine dal contenitore 265 + 15*/

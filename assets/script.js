@@ -13,7 +13,7 @@ function printPhoto(photo){
   const {title, url} = photo;
   photoCard.innerHTML += 
   `
-  <div class="mt-5 col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+  <div class="mt-5 mb-5 col-12 col-md-6 col-lg-4 d-flex justify-content-center">
     <div class="photo-card">
       <img src="./assets/img/pin.svg" alt="pin">
       <div class="photo">
