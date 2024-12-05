@@ -1,0 +1,58 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+  display: flex;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: xxx-large;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  background-image: url("./img/wall.png");
+}
+
+main{
+  min-height: calc(100vh - 150px);
+  background-image: url("./img/cork.png");
+}
+
+.photo-card{
+  background-color: white;
+  height: 360px;
+  width: 300px;
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.photo-card > img{
+  position: absolute;
+  top: -10px;
+  left: 50%; 
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.photo {
+  position: absolute;
+  width: 265px;
+  height: 265px;
+  background-color: green;
+  top: 15px; 
+  left: 50%; 
+  transform: translateX(-50%);
+}
+
+.caption{
+  font-family:'Courier New', Courier, monospace;
+  font-style: italic;
+  position: absolute;
+  top: 280px; /* Somma tra altezza foto e top di margine dal contenitore 265 + 15*/
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 265px;
+  height: 60px;
+  word-wrap: break-word; /* Permette al testo di andare a capo */
+}
