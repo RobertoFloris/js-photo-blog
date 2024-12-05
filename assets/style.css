@@ -45,6 +45,10 @@ main{
   transform: translateX(-50%);
 }
 
+.photo > img{
+  width: 100%;
+}
+
 .caption{
   font-family:'Courier New', Courier, monospace;
   font-style: italic;
