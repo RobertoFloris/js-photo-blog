@@ -33,6 +33,7 @@ main{
   width: 300px;
   position: relative;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .photo-card > img{
