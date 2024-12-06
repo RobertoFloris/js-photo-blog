@@ -28,6 +28,7 @@ main{
 }
 
 .photo-card{
+  cursor: pointer;
   background-color: white;
   height: 360px;
   width: 300px;
@@ -59,7 +60,6 @@ main{
 }
 
 .photo > img{
-  cursor: pointer;
   width: 100%;
 }
 

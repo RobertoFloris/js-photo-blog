@@ -5,34 +5,39 @@ const container = document.querySelector(".my-container");
 const loader = document.querySelector(".loader-container");
 const row = document.getElementById("row");
 const overlay = document.querySelector(".overlay");
-const exit = document.querySelector(".btn.btn-light");
-const photoOverlay = document.querySelector(".photo-overlay img")
+const photoOverlay = document.querySelector(".photo-overlay")
 
 axios.get(endpoint)
 .then(res => {
    loader.classList.add("d-none");
    container.classList.remove("d-none");
-   res.data.forEach(photo => printPhoto(photo))
-})
+   res.data.forEach(photo => printPhoto(photo));
+   const photoCards = document.querySelectorAll(".photo-card");
 
-row.addEventListener("click", e => {
-  e.preventDefault();
-  
-  // Il listener viene aggiunto all'elemento genitore row perché le photo-card vengono create in modo asincrono con il ciclo forEach, quindi non esisterebbero nel DOM al momento del caricamento della pagina e non sarebbe possibile aggiungere un event listener direttamente a ciascuna di esse. L'event listener su row cattura i clic effettuati su qualsiasi elemento figlio, e con e.target.closest(".photo-card") controlla se l'elemento cliccato o uno dei suoi antenati ha la classe photo-card. Se sì, significa che le card sono state già create, e la classe d-none viene rimossa dall'overlay, rendendolo visibile. 
-
-  // e -> event
-  // e.target -> Oggetto Element
-  // closest -> Metodo che appartiene agli oggetti Element
-  if (e.target.closest(".photo img")) { 
-    overlay.classList.remove("d-none");
-    photoOverlay.src = e.target.src;
-  }
+   photoCards.forEach((photoCard, i) => {
+    photoCard.addEventListener("click", e => {
+      e.preventDefault();
+      overlay.classList.remove("d-none");
+      printPhotoOverlay(res.data[i]);
+    });
 });
-
-exit.addEventListener("click", e =>{
-  e.preventDefault();
-  overlay.classList.add("d-none")
 })
+
+function printPhotoOverlay(photo){
+  const {url} = photo;
+  photoOverlay.innerHTML = 
+  `
+  <img src="${url}" alt="Foto">
+  <button type="button" class="m-3 btn btn-light">X</button>
+  `
+
+  const exit = document.querySelector(".btn.btn-light");
+  exit.addEventListener("click", e =>{
+    e.preventDefault();
+    overlay.classList.add("d-none")
+  })
+
+}
 
 function printPhoto(photo){
   const {title, url} = photo;
