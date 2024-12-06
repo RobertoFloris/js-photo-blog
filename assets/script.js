@@ -1,7 +1,7 @@
 // La chiamata all’endpoint di JSON Placeholder ci restituisce un array di oggetti con le seguenti proprietà:
 // albumId, id, title, url, thumbnailUrl.
 const endpoint="https://jsonplaceholder.typicode.com/photos?_limit=6";
-const container = document.querySelector(".container");
+const container = document.querySelector(".my-container");
 const loader = document.querySelector(".loader-container");
 const row = document.getElementById("row");
 const overlay = document.querySelector(".overlay");
@@ -36,7 +36,7 @@ exit.addEventListener("click", e =>{
 
 function printPhoto(photo){
   const {title, url} = photo;
-  const upper = title[0].toUpperCase();
+  const upper = title[0].toUpperCase() + title.substring(1);
   row.innerHTML += 
   `
   <div class="mt-5 mb-5 col-12 col-md-6 col-lg-4 d-flex justify-content-center">
@@ -45,7 +45,7 @@ function printPhoto(photo){
       <div class="photo">
         <img src="${url}" alt="Foto">
       </div>
-      <div class="caption d-flex justify-content-center align-items-center">${upper + title.substring(1)}</div>
+      <div class="caption d-flex justify-content-center align-items-center">${upper}</div>
     </div>
   </div>
   

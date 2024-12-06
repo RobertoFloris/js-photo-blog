@@ -14,8 +14,8 @@ header{
   background-image: url("./img/wall.png");
 }
 
-h1{
-  font-size: 160% !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
+.main-title{
+  font-size: 5rem;
 }
 
 main{
@@ -23,8 +23,8 @@ main{
   background-image: url("./img/cork.png");
 }
 
-.container{
-  max-width: 940px !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
+.my-container{
+  max-width: 940px;
 }
 
 .photo-card{
@@ -53,7 +53,6 @@ main{
   position: absolute;
   width: 265px;
   height: 265px;
-  background-color: green;
   top: 15px; 
   left: 50%; 
   transform: translateX(-50%);
