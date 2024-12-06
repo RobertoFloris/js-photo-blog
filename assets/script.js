@@ -36,6 +36,7 @@ exit.addEventListener("click", e =>{
 
 function printPhoto(photo){
   const {title, url} = photo;
+  const upper = title[0].toUpperCase();
   row.innerHTML += 
   `
   <div class="mt-5 mb-5 col-12 col-md-6 col-lg-4 d-flex justify-content-center">
@@ -44,7 +45,7 @@ function printPhoto(photo){
       <div class="photo">
         <img src="${url}" alt="Foto">
       </div>
-      <div class="caption d-flex justify-content-center align-items-center">${title}</div>
+      <div class="caption d-flex justify-content-center align-items-center">${upper + title.substring(1)}</div>
     </div>
   </div>
   

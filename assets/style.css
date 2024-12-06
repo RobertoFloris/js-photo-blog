@@ -15,7 +15,7 @@ header{
 }
 
 h1{
-  font-size: 120% !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
+  font-size: 160% !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
 }
 
 main{
@@ -24,7 +24,7 @@ main{
 }
 
 .container{
-  max-width: 940px;
+  max-width: 940px !important;   /* altrimenti viene sovrascritto da regole bootstrap scss */
 }
 
 .photo-card{
