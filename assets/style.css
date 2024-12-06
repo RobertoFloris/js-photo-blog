@@ -32,7 +32,13 @@ main{
   height: 360px;
   width: 300px;
   position: relative;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+.photo-card:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  z-index: 15;
 }
 
 .photo-card > img{
