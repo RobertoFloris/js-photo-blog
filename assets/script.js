@@ -7,20 +7,22 @@ const row = document.getElementById("row");
 const overlay = document.querySelector(".overlay");
 const photoOverlay = document.querySelector(".photo-overlay")
 
+
 axios.get(endpoint)
 .then(res => {
-   loader.classList.add("d-none");
-   container.classList.remove("d-none");
-   res.data.forEach(photo => printPhoto(photo));
-   const photoCards = document.querySelectorAll(".photo-card");
+  loader.classList.add("d-none");
+  container.classList.remove("d-none");
+  res.data.forEach(photo => printPhoto(photo));
 
-   photoCards.forEach((photoCard, i) => {
+  const photoCards = document.querySelectorAll(".photo-card");
+
+  photoCards.forEach((photoCard, i) => {
     photoCard.addEventListener("click", e => {
-      e.preventDefault();
-      overlay.classList.remove("d-none");
-      printPhotoOverlay(res.data[i]);
+    e.preventDefault();
+    overlay.classList.remove("d-none");
+    printPhotoOverlay(res.data[i]);
     });
-});
+  });
 })
 
 function printPhotoOverlay(photo){
@@ -38,6 +40,12 @@ function printPhotoOverlay(photo){
   })
 
 }
+
+overlay.addEventListener("click", e => {
+  if (e.target === overlay) {
+    overlay.classList.add("d-none");
+  }
+});
 
 function printPhoto(photo){
   const {title, url} = photo;
